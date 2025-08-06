@@ -123,14 +123,14 @@ function App() {
               </Typography>
               {typeof response === "object" && response.decision ? (
                 <Typography
-                  variant="h4"
+                  variant="h5"
                   fontWeight={900}
                   color={response.decision === "approved" ? "success.main" : "error.main"}
                   sx={{ mt: 2 }}
                 >
                   {response.decision === "approved"
-                    ? "✅ Yes, this is covered under the policy."
-                    : "❌ No, this is NOT covered under the policy."}
+                    ? `✅ ${response.justification}`
+                    : `❌ ${response.justification}`}
                 </Typography>
               ) : (
                 <Typography variant="h6" fontWeight={700}>
